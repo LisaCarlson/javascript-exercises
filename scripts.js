@@ -990,7 +990,23 @@ console.log(parensChecker("()(((())))")); //true
 console.log(parensChecker("())))(")); //false
 console.log(parensChecker(")(")); //false
 
-//reverse polish notation
+
+
+function crazy(string) {
+  var char = string.slice(0,1);
+  var addO;
+  if (string == '') {
+    return '';
+  }
+
+  vowelOrSpace.indexOf(char.toLowerCase()) == -1 ? addO = char + 'o' + char : addO = char;
+  
+  return addO + crazy(string.slice(1));
+}
+
+console.log(crazy("this is fun"));//=>tothohisos isos fofunon
+console.log(crazy(""));//=>
+console.log(crazy("Hello"));//=>hohelollolo
 
 
 
